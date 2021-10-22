@@ -1,0 +1,1258 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+/*
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #ff8080;
+$pink-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+
+// 4. Import the rest of Bulma
+*/
+
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+@import "./_utilities";
+
+@import "../node_modules/bulma/bulma";
+
+//GENERAL
+.body {
+  max-width: 100vw;
+  margin: 0;
+  font-family: $family-primary;
+}
+
+section {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+section.full {
+  max-width: 100vw;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+//NAV BAR
+body {
+  position: relative;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  padding-left: 20px;
+  padding-top: 10px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+
+  @media (min-width: 1020px) {
+    display: none;
+  }
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: $blush;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: 16px;
+  right: -57px;
+  font-size: 50px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle .ham {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: 20px;
+  right: -60px;
+}
+
+#menuToggle .ham span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: white;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle .ham span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle .ham span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ .ham span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -14px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ .ham span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ .ham span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(-5px, 19px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translateX(0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 5px 0;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: translateX(100%);
+}
+
+.li-title {
+  font-family: "NeuePlak-CompBlack";
+  font-size: 60px;
+  line-height: 50px;
+  color: $greyish-brown;
+  text-transform: uppercase;
+}
+
+.li-text {
+  font-family: $family-secondary;
+  font-size: 16px;
+  line-height: 30px;
+  color: $greyish-brown;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+  margin-top: 7px;
+}
+
+.pink-container {
+	background-color: $blush;
+	max-width: 100%;
+	height: 75px;
+  }
+
+  .oznaka-menu {
+    width: 15%;
+    height: 15%;
+    margin-bottom: -15px;
+  }
+
+//VIDEO
+.videoBlock {
+  max-width: auto;
+  align-self: center;
+}
+.videoWrapper {
+  padding-top: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  margin-bottom: 10%;
+}
+.videoWrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container-first {
+  @media (max-width: 1800px) {
+    margin-left: 250px;
+    margin-right: 250px;
+  }
+
+  @media (max-width: 1023px) {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  @media (max-width: 767px) {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+.first-block__text {
+  font-family: $family-secondary;
+  margin: auto;
+  color: $greyish-brown;
+
+  @media (max-width: 1800px) {
+    font-size: 30px;
+    line-height: 65px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 30px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 30px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.pink-span1 {
+  font-family: "NeuePlak-CompBlack";
+  color: $blush;
+
+  @media (min-width: 1200px) {
+    font-size: 50px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 50px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 50px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+    line-height: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.pink-span2 {
+  font-family: "NeuePlak-CompBlack";
+  color: $blush;
+
+  @media (min-width: 1200px) {
+    font-size: 40px;
+    line-height: 65px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 40px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 40px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+.bg {
+  background: url(../_assets/images/graffiti-door.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 66.67vw;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  position: relative;
+}
+
+.graffiti-box {
+  margin-top: 30px;
+}
+
+.graffiti__text_1 {
+  font-family: "NeuePlak-CompBlack";
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+
+  @media (min-width: 1200px) {
+    font-size: 300px;
+    line-height: 250px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 210px;
+    line-height: 190px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 100px;
+    line-height: 100px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 50px;
+    line-height: 50px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+}
+
+.graffiti__text_2 {
+  font-family: "NeuePlak-CompBlack";
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+
+  @media (min-width: 1200px) {
+    font-size: 300px;
+    line-height: 250px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 210px;
+    line-height: 190px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 100px;
+    line-height: 100px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+  @media (max-width: 767px) {
+    font-size: 50px;
+    line-height: 50px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $cherry-red;
+  }
+}
+
+.button1 {
+  background-color: white;
+  position: relative;
+  border: white;
+
+  @media (min-width: 1200px) {
+    height: 54px;
+    width: 308px;
+    display: block;
+    line-height: 35px;
+    border-radius: 26px;
+    margin: 40px auto;
+  }
+
+  @media (max-width: 1200px) {
+    height: 54px;
+    width: 308px;
+    display: block;
+    line-height: 35px;
+    border-radius: 26px;
+    margin: 40px auto;
+    padding-top: 5px;
+  }
+
+  @media (max-width: 1023px) {
+    height: 40px;
+    width: 165px;
+    display: block;
+    line-height: 35px;
+    border-radius: 27px;
+    margin: 10px auto;
+  }
+
+  @media (max-width: 767px) {
+    height: 30px;
+    width: 120px;
+    display: block;
+    line-height: 35px;
+    border-radius: 27px;
+    margin: 5px auto;
+  }
+}
+
+.play-pink {
+
+  @media (min-width: 1200px) {
+    height: 47px;
+  }
+  @media (max-width: 1023px) {
+    height: 30px;
+  }
+  @media (max-width: 767px) {
+  height: 30px;
+  padding-bottom: 10px;
+  }
+}
+
+.tenisica-small {
+  position: absolute;
+  top: 9.6vw;
+  left: -20vw;
+  width: 20vw;
+  z-index: 1;
+
+
+  @media (min-width: 1200px) {
+  }
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (max-width: 1023px) {
+ 
+  }
+
+  @media (max-width: 767px) {
+  
+  }
+}
+
+.container-second {
+  @media (min-width: 1200px) {
+    padding-top: 140px;
+    padding-bottom: 70px;
+  }
+
+  @media (max-width: 1200px) {
+    padding-top: 140px;
+  }
+
+  @media (max-width: 1023px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 30px;
+  }
+}
+
+.column {
+  padding: 0;
+}
+.columns {
+  margin: 0 !important;
+}
+.container-columns {
+  margin-left: 60px;
+  margin-right: 60px;
+  
+  @media (max-width: 1024px) {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+}
+
+h1 {
+  font-family: "NeuePlak-CompBlack";
+  color: $greyish-brown;
+
+  @media (min-width: 1200px) {
+    font-size: 120px;
+    line-height: 130px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 90px;
+    line-height: 79px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 26px;
+    line-height: 30px;
+    margin-top: -15px;
+  }
+}
+
+h2 {
+  font-family: "NeuePlak-CompBlack";
+  color: $greyish-brown;
+
+  @media (min-width: 1200px) {
+    font-size: 90px;
+    line-height: 130px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 70px;
+    line-height: 79px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+h4 {
+  font-family: "NeuePlak-CompBlack";
+  color: $greyish-brown;
+
+  @media (min-width: 1200px) {
+    font-size: 120px;
+    line-height: 130px;
+    margin-top: -100px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 90px;
+    line-height: 79px;
+    margin-top: -150px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 60px;
+    line-height: 50px;
+    margin-top: -70px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 60px;
+    line-height: 50px;
+    margin-top: -15px;
+  }
+}
+
+h5 {
+  font-family: $family-secondary;
+  color: $blush;
+  font-weight: 500;
+
+  @media (min-width: 1200px) {
+    font-size: 30px;
+    line-height: 150px;
+    
+  }
+  @media (max-width: 1200px) {
+    font-size: 30px;
+    line-height: 150px;
+    padding-left: 10px;
+    
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 20px;
+    padding-left: 30px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+    margin-top: -50px;
+    padding-left: 40px;
+    
+  }
+}
+.map-wrapper {
+  max-width: 80vw;
+  margin: 5% auto;
+  position: relative;
+}
+
+.sljeme {
+  @media (min-width: 1200px) {
+  position: absolute;
+  left: 50%;
+  top: 7%;
+  height: 150px;
+  width: 150px;
+  }
+
+  @media (max-width: 1200px) {
+    position: absolute;
+    left: 50%;
+    top: 7%;
+    height: 100px;
+    width: 100px;
+  }
+
+  @media (max-width: 1023px) {
+    position: absolute;
+    left: 50%;
+    top: 7%;
+    height: 50px;
+    width: 50px;
+  }
+
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 50%;
+    top: 7%;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.britanac {
+  @media (min-width: 1200px) {
+  position: absolute;
+  left: 32%;
+  top: 30%;
+  height: 150px;
+  width: 150px;
+  }
+
+  @media (max-width: 1200px) {
+    position: absolute;
+    left: 32%;
+    top: 30%;
+    height: 100px;
+    width: 100px;
+  }
+
+  @media (max-width: 1023px) {
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    height: 50px;
+    width: 50px;
+  }
+
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 33%;
+    top: 30%;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.bocarski {
+  @media (min-width: 1200px) {
+  position: absolute;
+  left: 47%;
+  top: 37%;
+  height: 150px;
+  width: 150px;
+  }
+
+  @media (max-width: 1200px) {
+    position: absolute;
+    left: 47%;
+    top: 37%;
+    height: 100px;
+    width: 100px;
+  }
+
+  @media (max-width: 1023px) {
+    position: absolute;
+    left: 47%;
+    top: 37%;
+    height: 50px;
+    width: 50px;
+  }
+
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 46%;
+    top: 35%;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.svetice {
+  @media (min-width: 1200px) {
+  position: absolute;
+  left: 47%;
+  top: 37%;
+  height: 150px;
+  width: 150px;
+  }
+
+  @media (max-width: 1200px) {
+    position: absolute;
+    left: 47%;
+    top: 37%;
+    height: 100px;
+    width: 100px;
+  }
+
+  @media (max-width: 1023px) {
+    position: absolute;
+    left: 47%;
+    top: 37%;
+    height: 50px;
+    width: 50px;
+  }
+
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 46%;
+    top: 35%;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.bundek {
+  @media (min-width: 1200px) {
+  position: absolute;
+  left: 27%;
+  top: 49%;
+  height: 150px;
+  width: 150px;
+  }
+
+  @media (max-width: 1200px) {
+    position: absolute;
+    left: 27%;
+    top: 49%;
+    height: 100px;
+    width: 100px;
+  }
+
+  @media (max-width: 1023px) {
+    position: absolute;
+    left: 33%;
+    top: 51%;
+    height: 50px;
+    width: 50px;
+  }
+
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 33%;
+    top: 48%;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.title__black {
+  font-family: "NeuePlak-CompBlack";
+  color: $greyish-brown;
+
+  @media (min-width: 1200px) {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 40px;
+    line-height: 30px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+}
+
+.title__pink {
+  font-family: "NeuePlak-CompBlack";
+  color: $blush;
+
+  @media (min-width: 1200px) {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 70px;
+    line-height: 70px;
+    padding-bottom: 30px;
+  }
+  
+  @media (max-width: 767px) {
+    font-size: 40px;
+    line-height: 40px;
+    padding-bottom: 30px;
+  }
+}
+
+.text-right {
+  @media (max-width: 1200px) {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.button__pink {
+  background-color: $blush;
+  position: relative;
+  font-family: $family-secondary;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
+  display: inline-block;
+
+  @media (min-width: 1200px) {
+    line-height: 50px;
+    border-radius: 26px;
+    border: 3px solid $blush;
+    margin-left: 0;
+    margin-top: 50px;
+    font-size: 18px;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 1200px) {
+    line-height: 40px;
+    border-radius: 26px;
+    border: 3px solid $blush;
+    margin-left: 0;
+    margin-top: 30px;
+    padding: 0 40px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 1023px) {
+    line-height: 35px;
+    border-radius: 27px;
+    border: 2px solid $blush;
+    margin: 20px auto;
+    padding: 0 40px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    border-radius: 27px;
+    border: 1px solid $blush;
+    margin: 25px auto 15px;
+    font-size: 14px;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 40px;
+    width: auto;
+  }
+}
+
+.button__pink:hover {
+  color: $blush;
+  background-color: white;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
+  border: white;
+}
+
+.button__pink-right {
+  background-color: $blush;
+  position: relative;
+  font-family: $family-secondary;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
+
+  @media (min-width: 1200px) {
+    height: 54px;
+    width: 308px;
+    display: block;
+    line-height: 50px;
+    border-radius: 26px;
+    border: 3px solid $blush;
+    margin-left: 270px;
+    margin-top: 50px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 1200px) {
+    height: 44.3px;
+    width: 252.9px;
+    display: block;
+    line-height: 40px;
+    border-radius: 26px;
+    border: 3px solid $blush;
+    margin-left: 175px;
+    margin-top: 30px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 1023px) {
+    height: 45px;
+    width: 180px;
+    display: block;
+    line-height: 35px;
+    border-radius: 27px;
+    border: 2px solid $blush;
+    margin: 20px auto;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+    height: 27px;
+    width: 135px;
+    display: block;
+    border-radius: 27px;
+    border: 1px solid $blush;
+    margin: 15px auto;
+    font-size: 11px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+.button__pink-right:hover {
+  color: $blush;
+  background-color: white;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
+  border: white;
+}
+
+.titles__izazov {
+  align-self: flex-start;
+  @media (min-width: 1024px) {
+    padding-right: 40px;
+  }
+
+  .is-inverted & {
+    @media (min-width: 1024px) {
+      order: 2;
+      padding-right: 0;
+      padding-left: 40px;
+    }
+  }
+
+  .button__pink {
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+}
+
+.video__izazov {
+  @media (max-width: 1023px) {
+    margin: 0 -35px;
+  }
+  @media (max-width: 767px) {
+    margin: 0 -35px;
+  }
+}
+
+.text__izazov-naslov {
+  text-transform: uppercase;
+  font-family: $family-secondary;
+  color: $greyish-brown;
+  font-weight: 500;
+
+  @media (min-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+.text__izazov {
+  font-family: $family-secondary;
+  color: $greyish-brown;
+  font-weight: 500;
+
+  @media (min-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+.text__izazov-naslov-left {
+  text-transform: uppercase;
+  font-family: $family-secondary;
+  color: $greyish-brown;
+  font-weight: 500;
+  @media (min-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: -95%;
+    padding-right: 100%;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: -113%;
+    padding-right: 100%;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 30px;
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
+
+.text__izazov-left {
+  font-family: $family-secondary;
+  color: $greyish-brown;
+  font-weight: 500;
+
+  @media (min-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: -95%;
+    padding-right: 100%;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: -113%;
+    padding-right: 100%;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 20px;
+    line-height: 40px;
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 30px;
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
+
+.wrapper-izazov {
+   padding-bottom: 80px;
+   width: 90vw;
+   
+   @media (max-width: 1200px) {
+     margin: auto;
+   }
+  @media (min-width: 1024px) {
+   margin: auto;
+   padding-left: 45px;
+   padding-right: 45px;
+  }
+
+  @media (max-width: 1023px) {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+   margin: auto;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: -30px;
+  }
+
+  .button__pink {
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+}
+
+.locations-wrap {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .column {
+    align-self: flex-start;
+  }
+}
+
+.red-container {
+  background-color: $blush;
+  max-width: 100%;
+  height: 9px;
+}
+
+.text__oznaka-naslov {
+  font-family: "NeuePlak-CompBlack";
+  font-size: 60px;
+  line-height: 50px;
+  font-weight: bold;
+  color: $greyish-brown;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.text__oznaka-tekst {
+  font-family: $family-secondary;
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: 500;
+  color: $greyish-brown;
+  text-transform: uppercase;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+//FOOTER
+.footer {
+  background-color: $white;
+}
+
+.container-footer {
+  h6,
+  a {
+    padding: 20px;
+    font-family: $family-secondary;
+  }
+
+  @include for-tablet-portrait-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 16px;
+  }
+
+  @include for-phone-only {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+}
+
+.menu-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}

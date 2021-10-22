@@ -1,0 +1,40 @@
+
+//** MEDIA QUERIES **
+
+@mixin for-phone-only {
+    @media (max-width: 768px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+
+//** VARIABLES **
+
+$fullhd: 1200px + (2 * $gap);
+$section-padding-desktop: 3rem 0;
+
+//colors
+$greyish-brown: #3f3f3f;
+$blush: #f78484;
+$cherry-red: #e50019;
+
+
+//font-family
+$family-primary: 'Urbanist', sans-serif;
+$family-secondary: 'Roboto', sans-serif;
+
+
+@font-face {
+	font-family: "NeuePlak-CompBlack";
+	src: url("../_assets/fonts/NeuePlak-CompBlack.otf") format("opentype");
+  }
+
