@@ -50,6 +50,7 @@ section.full {
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
+  overflow: hidden;
 }
 
 //NAV BAR
@@ -506,7 +507,6 @@ body {
 .container-second {
   @media (min-width: 1200px) {
     padding-top: 140px;
-    padding-bottom: 70px;
   }
 
   @media (max-width: 1200px) {
@@ -594,24 +594,20 @@ h4 {
   @media (min-width: 1200px) {
     font-size: 120px;
     line-height: 130px;
-    margin-top: -100px;
   }
   @media (max-width: 1200px) {
     font-size: 90px;
     line-height: 79px;
-    margin-top: -150px;
   }
 
   @media (max-width: 1023px) {
     font-size: 60px;
     line-height: 50px;
-    margin-top: -70px;
   }
 
   @media (max-width: 767px) {
     font-size: 60px;
     line-height: 50px;
-    margin-top: -15px;
   }
 }
 
@@ -645,178 +641,131 @@ h5 {
   }
 }
 .map-wrapper {
-  max-width: 80vw;
+  max-width: 1186px;
   margin: 5% auto;
   position: relative;
+
+  a {
+    // background-color: rgba(0,0,0,.4);
+    position: absolute;
+
+    width: 10%;
+    height: 10%;
+  }
 }
 
 .sljeme {
   @media (min-width: 1200px) {
-  position: absolute;
-  left: 50%;
-  top: 7%;
-  height: 150px;
-  width: 150px;
+    left: 47%;
+    top: 7%;
   }
 
   @media (max-width: 1200px) {
-    position: absolute;
-    left: 50%;
-    top: 7%;
-    height: 100px;
-    width: 100px;
+    left: 48.5%;
+    top: 8%;
   }
 
   @media (max-width: 1023px) {
-    position: absolute;
-    left: 50%;
-    top: 7%;
-    height: 50px;
-    width: 50px;
+    left: 48.5%;
+    top: 7.5%;
   }
 
   @media (max-width: 767px) {
-    position: absolute;
-    left: 50%;
+    left: 49.5%;
     top: 7%;
-    height: 30px;
-    width: 30px;
+  }
+
+  @media (max-width: 767px) {
+    left: 49.5%;
+    top: 7%;
   }
 }
 
 .britanac {
   @media (min-width: 1200px) {
-  position: absolute;
-  left: 32%;
-  top: 30%;
-  height: 150px;
-  width: 150px;
+  left: 33%;
+  top: 35%;
   }
 
   @media (max-width: 1200px) {
-    position: absolute;
-    left: 32%;
-    top: 30%;
-    height: 100px;
-    width: 100px;
+    left: 34%;
+    top: 36%;
   }
 
   @media (max-width: 1023px) {
-    position: absolute;
     left: 35%;
-    top: 30%;
-    height: 50px;
-    width: 50px;
+    top: 36%;
   }
 
   @media (max-width: 767px) {
-    position: absolute;
-    left: 33%;
-    top: 30%;
-    height: 30px;
-    width: 30px;
+    left: 35%;
+    top: 35%;
   }
 }
 
 .bocarski {
   @media (min-width: 1200px) {
-  position: absolute;
-  left: 47%;
-  top: 37%;
-  height: 150px;
-  width: 150px;
+  left: 44%;
+  top: 42%;
   }
 
   @media (max-width: 1200px) {
-    position: absolute;
-    left: 47%;
-    top: 37%;
-    height: 100px;
-    width: 100px;
+    left: 45%;
+    top: 43%;
   }
 
   @media (max-width: 1023px) {
-    position: absolute;
-    left: 47%;
-    top: 37%;
-    height: 50px;
-    width: 50px;
+    left: 45%;
+    top: 43%;
   }
 
   @media (max-width: 767px) {
-    position: absolute;
-    left: 46%;
-    top: 35%;
-    height: 30px;
-    width: 30px;
+    left: 45%;
+    top: 42%;
   }
 }
 
 .svetice {
   @media (min-width: 1200px) {
-  position: absolute;
-  left: 47%;
-  top: 37%;
-  height: 150px;
-  width: 150px;
+  left: 45%;
+  top: 27%;
   }
 
   @media (max-width: 1200px) {
-    position: absolute;
-    left: 47%;
-    top: 37%;
-    height: 100px;
-    width: 100px;
+    left: 46%;
+    top: 27%;
   }
 
   @media (max-width: 1023px) {
-    position: absolute;
     left: 47%;
-    top: 37%;
-    height: 50px;
-    width: 50px;
+    top: 27%;
   }
 
   @media (max-width: 767px) {
-    position: absolute;
-    left: 46%;
-    top: 35%;
-    height: 30px;
-    width: 30px;
+    left: 46.5%;
+    top: 27%;
   }
 }
 
 .bundek {
   @media (min-width: 1200px) {
-  position: absolute;
-  left: 27%;
+  left: 31%;
   top: 49%;
-  height: 150px;
-  width: 150px;
   }
 
   @media (max-width: 1200px) {
-    position: absolute;
-    left: 27%;
+    left: 33%;
     top: 49%;
-    height: 100px;
-    width: 100px;
   }
 
   @media (max-width: 1023px) {
-    position: absolute;
-    left: 33%;
-    top: 51%;
-    height: 50px;
-    width: 50px;
+    left: 32.5%;
+    top: 49%;
   }
 
   @media (max-width: 767px) {
-    position: absolute;
-    left: 33%;
-    top: 48%;
-    height: 30px;
-    width: 30px;
+    left: 32%;
+    top: 49%;
   }
 }
 
@@ -934,7 +883,7 @@ h5 {
   color: $blush;
   background-color: white;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
-  border: white;
+  border-color: white;
 }
 
 .button__pink-right {
@@ -999,6 +948,31 @@ h5 {
   background-color: white;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
   border: white;
+}
+
+.text__link {
+  line-height: 35px;
+  font-family: $family-secondary;
+  color: $blush;
+  font-weight: 500;
+
+  margin: 16px 0 10px 0;
+  display: inline-block;
+
+  @media (min-width: 1200px) {
+    font-size: 30px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 }
 
 .titles__izazov {
@@ -1152,26 +1126,26 @@ h5 {
 
 .wrapper-izazov {
    padding-bottom: 80px;
-   width: 90vw;
+  //  width: 90vw;
    
    @media (max-width: 1200px) {
      margin: auto;
    }
   @media (min-width: 1024px) {
    margin: auto;
-   padding-left: 45px;
-   padding-right: 45px;
+   padding-left: 60px;
+   padding-right: 60px;
   }
 
   @media (max-width: 1023px) {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
     padding-bottom: 40px;
    margin: auto;
   }
 
   @media (max-width: 767px) {
-    margin-top: -30px;
+    // margin-top: -30px;
   }
 
   .button__pink {
